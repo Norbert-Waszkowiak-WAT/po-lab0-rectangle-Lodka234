@@ -1,30 +1,45 @@
 #include <iostream>
 using namespace std;
+#include <iostream>
+using namespace std;
+ 
 class Rectangle {
+ 
 private:
     double width;
-    double hight;
+    double height;
+ 
 public:
-    rectangle(double w, double h):
-    width(w),hight(h){};
-    void setWidth(double h){
+    Rectangle(double w, double h)
+        : width(w), height(h) {}
+ 
+    void setWidth(double w) {
         width = w;
     }
-    void setHeight(double h){
-        hight = h;
+ 
+    void setHeight(double h) {
+        height = h;
     }
-    double getWidth() const{
+ 
+    double getWidth() const {
+        return width;
+    }
+ 
+    double getHeight() const {
         return height;
     }
-    double area() const{
-        return width*hight;
+ 
+    double area() const {
+        return width * height;
     }
-    double perimeter()const{
-        return 2*(hight+width);
+ 
+    double perimeter() const {
+           return 2 * (width + height);
     }
-    double disply() const{
-        cout << "Rectangle:" << width << "x" << height << "h" << endl;
-        cout << "Area" << area() << endl;
-        cout << "Perimeter" << perimeter() << endl; 
+ 
+    void display() const {
+        cout << "Rectangle " << width << " x " << height << endl;
+        cout << "Area " << area() << endl;
+        cout << "Perimeter " << perimeter() << endl;
     }
 };
